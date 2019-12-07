@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active:
+    - default
+  application:
+    name: tvajjala.in
+  output:
+    ansi:
+      enabled: always
+  sleuth:
+    rxjava:
+      schedulers:
+        hook:
+          enabled: true
+
+logging:
+  level:
+    # Enabling trace for app specific logging.
+    org.springframework: INFO
+    org.springframework.web: WARN
+    org.springframework.boot: WARN
+
+elk:
+  url: https://zipkin.io/zipkin-api/
+
+
+
+application:
+  security:
+    users:
+      - username: admin
+        password: password
+        role: ADMIN
+      - username: tvajjala
+        password: password
+        role: DEVELOPER

@@ -1,0 +1,30 @@
+
+== Reactive Spring Boot
+
+
+Spring boot has following events in the speficied order to register listeners to your application
+
+
+
+[source]
+----
+
+org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent
+
+org.springframework.boot.context.event.ApplicationContextInitializedEvent
+
+org.springframework.boot.context.event.ApplicationPreparedEvent
+
+org.springframework.boot.builder.ParentContextApplicationContextInitializer$ParentContextAvailableEvent
+
+org.springframework.boot.context.event.ApplicationPreparedEvent
+
+org.springframework.context.event.ContextRefreshedEvent
+
+org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent
+
+started org.springframework.boot.context.event.ApplicationStartedEvent
+
+org.springframework.boot.context.event.ApplicationReadyEvent
+
+----
