@@ -13,6 +13,9 @@ spring:
         hook:
           enabled: true
 
+  zipkin:
+    enabled: false # zipkin disabled
+
 logging:
   level:
     # Enabling trace for app specific logging.

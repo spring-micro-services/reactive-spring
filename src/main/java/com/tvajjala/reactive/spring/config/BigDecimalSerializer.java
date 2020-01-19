@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 import java.math.BigDecimal;
 
+/**
+ * @author ThirupathiReddy Vajjala
+ */
 public class BigDecimalSerializer extends JsonSerializer<BigDecimal> {
 
     public static final BigDecimalSerializer INSTANCE=new BigDecimalSerializer();

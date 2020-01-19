@@ -1,8 +1,10 @@
 package com.tvajjala.reactive.spring.config;
 
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * @author ThirupathiReddy Vajjala
+ */
 public class CustomPasswordEncoder implements PasswordEncoder {
 
     private static final PasswordEncoder INSTANCE = new CustomPasswordEncoder();

@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * @author ThirupathiReddy Vajjala
+ */
 public class CustomAuthFilter extends BasicAuthenticationFilter {
 
     public CustomAuthFilter(AuthenticationManager authenticationManager, AuthenticationEntryPoint authenticationEntryPoint){

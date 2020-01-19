@@ -11,6 +11,16 @@ import java.io.IOException;
 public class CustomAuthenticationEntryPoint extends BasicAuthenticationEntryPoint {
 
 
+    public CustomAuthenticationEntryPoint(String realmName){
+        super.setRealmName(realmName);
+    }
+
+    @Override
+    public void setRealmName(String realmName) {
+        super.setRealmName(realmName);
+    }
+
+
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException {
        //customize your response here

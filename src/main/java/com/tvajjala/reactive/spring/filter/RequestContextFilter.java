@@ -1,6 +1,5 @@
 package com.tvajjala.reactive.spring.filter;
 
-import com.tvajjala.reactive.spring.context.ThreadContext;
 import com.tvajjala.reactive.spring.context.ThreadContextHolder;
 import org.springframework.http.HttpHeaders;
 
@@ -14,6 +13,9 @@ import java.util.Enumeration;
 
 import static com.tvajjala.reactive.spring.context.ThreadContextHolder.getThreadContext;
 
+/**
+ * @author ThirupathiReddy Vajjala
+ */
 public class RequestContextFilter implements javax.servlet.Filter {
 
     @Override

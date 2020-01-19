@@ -16,6 +16,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
+/**
+ * Security Configuration
+ * @author ThirupathiReddy Vajjala
+ */
 @Configuration
 @EnableConfigurationProperties(ApplicationSecurity.class)
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
@@ -23,8 +27,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     ApplicationSecurity applicationSecurity;
 
+
+    /**
+     * filter bean reads request context and adds to {@link com.tvajjala.reactive.spring.context.ThreadContextHolder}
+     *
+     * @return RequestContextFilter
+     */
     @Bean
-    public FilterRegistrationBean<RequestContextFilter> contextHolderFilterBean(){
+    public FilterRegistrationBean<RequestContextFilter> contextHolderFilter(){
 
         FilterRegistrationBean filterRegistrationBean=new FilterRegistrationBean();
 
@@ -40,25 +50,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
        http.csrf().disable()
                .authorizeRequests()
+
                .antMatchers("/reactive/**")
                .authenticated()
                .and()
+
                .httpBasic()
                .and()
+
                .addFilterAt(new CustomAuthFilter(authenticationManager(),authenticationEntryPoint()), BasicAuthenticationFilter.class)
                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
 
     @Bean
-    AuthenticationEntryPoint authenticationEntryPoint(){
-        return new CustomAuthenticationEntryPoint();
+    public AuthenticationEntryPoint authenticationEntryPoint(){
+        return new CustomAuthenticationEntryPoint("TVAJJALA");
     }
 
 
 
     @Bean
-    PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder(){
         return CustomPasswordEncoder.getInstance();
     }
 
@@ -69,7 +82,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 
     @Bean
-    UserDetailsService customUserDetailService(){
+    public UserDetailsService customUserDetailService(){
         return new CustomUserDetailService(applicationSecurity.getUsers());
     }
 

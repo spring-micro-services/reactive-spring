@@ -5,9 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;
 import org.springframework.context.ApplicationListener;
 
-public class ApplicationInitializationHook implements ApplicationListener<ApplicationEnvironmentPreparedEvent> {
+public class ApplicationPostInitializationHook implements ApplicationListener<ApplicationEnvironmentPreparedEvent> {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationInitializationHook.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationPostInitializationHook.class);
 
     @Override
     public void onApplicationEvent(ApplicationEnvironmentPreparedEvent event) {

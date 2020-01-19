@@ -4,6 +4,9 @@ import org.springframework.http.HttpHeaders;
 
 import java.io.Serializable;
 
+/**
+ * @author ThirupathiReddy Vajjala
+ */
 public final class ThreadContext implements Serializable{
 
     private HttpHeaders httpHeaders;

@@ -1,7 +1,5 @@
 package com.tvajjala.reactive.spring.config;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
@@ -11,6 +9,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
+/**
+ * @author ThirupathiReddy Vajjala
+ */
 public class CustomUserDetailService implements UserDetailsService {
 
 

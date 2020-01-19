@@ -6,6 +6,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author ThirupathiReddy Vajjala
+ */
 @ConfigurationProperties(prefix = "application.security")
 public class ApplicationSecurity {
 
